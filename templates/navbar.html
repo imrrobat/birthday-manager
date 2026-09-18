@@ -5,15 +5,18 @@
             <span>مدیریت تولدها</span>
         </a>
 
-        <form class="d-flex align-items-center gap-2" role="search" method="GET" action="{% url 'home' %}">
-            <div class="input-group input-group-sm">
-                <input class="form-control" type="search" name="q"
-                       value="{{ search_query }}" placeholder="جستجوی نام..." aria-label="Search">
-                <button class="btn btn-outline-primary d-flex align-items-center gap-1" type="submit">
-                    <i data-feather="search"></i>
-                    <span class="d-none d-sm-inline">جستجو</span>
-                </button>
-            </div>
-        </form>
+       <form method="GET" action="{% url 'home' %}" class="d-flex">
+    <input
+        type="text"
+        name="q"
+        value="{{ query }}"
+        class="form-control"
+        placeholder="جستجو..."
+    >
+
+    <button type="submit" class="btn btn-primary">
+        <i data-feather="search"></i>
+    </button>
+</form>
     </div>
 </nav>

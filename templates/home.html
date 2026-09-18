@@ -64,10 +64,18 @@
                                 <td class="fw-semibold">{{person.name}}</td>
                                 <td><span class="badge bg-light text-dark border">{{person.relation}}</span></td>
                                 <td>{{person.birthday_date|to_jalali}}</td>
-                                <td><span class="badge-age">۲۵ ساله</span></td>
-                                <td><span class="badge-turning">۲۶ سالگی 🎂</span></td>
+                                <td>
+    <span class="badge-age">
+        {{ person.birthday_date|age }} ساله
+    </span>
+</td>
+                                <td>
+    <span class="badge-turning">
+        {{ person.birthday_date|days_until_birthday }} روز 🎂
+    </span>
+</td>
                                 <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-outline-warning action-btn me-1" title="ویرایش">
+                                    <a href="{% url 'edit_birthday' person.id %}" class="btn btn-sm btn-outline-warning action-btn me-1" title="ویرایش">
                                         <i data-feather="edit-2"></i>
                                     </a>
                                     <a href="{% url 'delete' person.id %}" class="btn btn-sm btn-outline-danger action-btn" title="حذف">
